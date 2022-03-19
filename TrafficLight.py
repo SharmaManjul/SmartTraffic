@@ -6,6 +6,17 @@ class TrafficLight:
         self.y_time = y_time
         self.g_time = g_time
 
+    def traffic_flow(self):
+        if self.light_state == 1:
+            self.traffic += self.r_time * 5  # 5 cars per minute getting added
+        elif self.light_state == 2:
+            self.traffic += self.y_time * 3
+        elif self.light_state == 3:
+            self.traffic -= self.g_time * 10
+        else:
+            return "Invalid Light State."
+        return self.traffic
+
     def get_light_state(self):
         return self.light_state
 
@@ -37,14 +48,30 @@ class TrafficLight:
         self.g_time = g_time
 
 
-l_1 = TrafficLight(0, 0, 0, 0, 0)
+l1 = TrafficLight(0, 0, 0, 0, 0)
 
-print(l_1.get_light_state())
-print(l_1.get_traffic())
+print(l1.get_light_state())
+print(l1.get_traffic())
 
-l_1.set_light_state(2)
-l_1.set_traffic(13)
+l1.set_light_state(1)
+l1.set_traffic(13)
+l1.set_r_time(3)
+l1.set_y_time(0.1)
+l1.set_g_time(2)
 
-print(l_1.get_light_state())
-print(l_1.get_traffic())
+print(l1.get_light_state())
+print(l1.get_traffic())
 
+l1.traffic_flow()
+print(l1.get_light_state())
+print(l1.get_traffic())
+
+l1.set_light_state(2)
+l1.traffic_flow()
+print(l1.get_light_state())
+print(l1.get_traffic())
+
+l1.set_light_state(3)
+l1.traffic_flow()
+print(l1.get_light_state())
+print(l1.get_traffic())
