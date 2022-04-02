@@ -53,8 +53,7 @@ class TrafficLight:
 
 
 def test_traffic_light():
-    l1 = TrafficLight(0, 0, 0, 0, 0)
-    l1.set_traffic_time(3, 0.05, 3)
+    l1 = TrafficLight(0, 0, 3, 0.05, 3)
     l1.set_traffic(0)
 
     print("Initial traffic times: ", l1.get_traffic_time())
@@ -70,3 +69,4 @@ def test_traffic_light():
     l1.set_light_state(3)
     print(l1.get_light_state())
     print(l1.get_traffic())
+
