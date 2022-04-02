@@ -38,21 +38,35 @@ class TrafficLight:
         self.y_time = y_time
         self.g_time = g_time
 
+# test_traffic_light method lets you test the above class.
+# Expected Output is:
+# Initial traffic times:  {'red': 3, 'yellow': 0.05, 'green': 3}
+# Light state inside traffic flow:  1
+# 1
+# 15
+# Light state inside traffic flow:  2
+# 2
+# 15.1
+# Light state inside traffic flow:  3
+# 3
+# 3.0999999999999996
 
-l1 = TrafficLight(0, 0, 0, 0, 0)
-l1.set_traffic_time(3, 0.05, 3)
-l1.set_traffic(0)
 
-print("Initial traffic times: ", l1.get_traffic_time())
+def test_traffic_light():
+    l1 = TrafficLight(0, 0, 0, 0, 0)
+    l1.set_traffic_time(3, 0.05, 3)
+    l1.set_traffic(0)
 
-l1.set_light_state(1)
-print(l1.get_light_state())
-print(l1.get_traffic())
+    print("Initial traffic times: ", l1.get_traffic_time())
 
-l1.set_light_state(2)
-print(l1.get_light_state())
-print(l1.get_traffic())
+    l1.set_light_state(1)
+    print(l1.get_light_state())
+    print(l1.get_traffic())
 
-l1.set_light_state(3)
-print(l1.get_light_state())
-print(l1.get_traffic())
+    l1.set_light_state(2)
+    print(l1.get_light_state())
+    print(l1.get_traffic())
+
+    l1.set_light_state(3)
+    print(l1.get_light_state())
+    print(l1.get_traffic())
