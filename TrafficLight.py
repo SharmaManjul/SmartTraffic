@@ -24,9 +24,7 @@ class TrafficLight:
         return self.traffic
 
     def get_traffic_time(self):
-        return self.r_time
-        return self.y_time
-        return self.g_time
+        return {"red":self.r_time, "yellow":self.y_time, "green": self.g_time}
 
     def set_light_state(self, light_state):
         self.light_state = light_state
@@ -45,8 +43,7 @@ l1 = TrafficLight(0, 0, 0, 0, 0)
 l1.set_traffic_time(3, 0.05, 3)
 l1.set_traffic(0)
 
-print(l1.get_light_state())
-print(l1.get_traffic())
+print("Initial traffic times: ", l1.get_traffic_time())
 
 l1.set_light_state(1)
 print(l1.get_light_state())
